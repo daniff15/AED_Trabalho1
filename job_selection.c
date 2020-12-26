@@ -98,6 +98,7 @@ typedef struct
   int ending_date;        // I ending date of this task
   int profit;             // I the profit if this task is performed
   int assigned_to;        // S current programmer number this task is assigned to (use -1 for no assignment)
+  int best_assigned_to;   // assigned_to da task na melhor solução do problema 
 }
 task_t;
 
@@ -295,6 +296,11 @@ void recursive_function(problem_t *problem, int num_tarefas)
     {
       problem->best_total_profit = problem->total_profit;
       problem->num_solutions = 1;
+
+      for (int j = 0; j < problem->T; j++)
+      {
+        problem->task[j].best_assigned_to = problem->task[j].assigned_to; 
+      }
     }
     else if (problem->total_profit == problem->best_total_profit)
     {
@@ -381,11 +387,11 @@ static void solve(problem_t *problem)
 #define TASK problem->task[i]
   for (i = 0; i < 9; i++)
   {
-    fprintf(fp, "%-d %15d %15d %14d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit);
+    fprintf(fp, "%-d %15d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit, TASK.best_assigned_to);
   }
   for (; i < problem->T ; i++)
   {
-    fprintf(fp, "%-d %14d %15d %14d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit);
+    fprintf(fp, "%-d %14d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.best_assigned_to);
   }
 #undef TASK
   fprintf(fp,"End\n");
