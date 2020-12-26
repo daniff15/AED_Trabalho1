@@ -1,12 +1,6 @@
 # AED_Trabalho1
 * Wheigthed Job Selection, with more than one programmer.
 
-Given T programming tasks, each one with a starting date, an ending date, and a profit, and given P programmers,
-the generalized weighted job selection problem asks for the best subset of programming tasks such that
-• the sum of the profits of the programming tasks belonging to the subset is maximized,
-• each programming task is done by a single programmer, and
-• each programmer cannot work on more than one task at a time.
-
 Dados T tasks, cada uma tendo uma data inicial, uma data final e um lucro, e dado P programadores, o problema de Wheigthed Job Selection pede pelo melhor subconjunto de tasks tal que:
 
 * A soma dos lucros de todas as tasks pertencentes ao conjuntos seja a maior possível,
