@@ -371,10 +371,16 @@ static void solve(problem_t *problem)
   fprintf(fp,"P = %d\n",problem->P);
   fprintf(fp,"Profits%s ignored\n",(problem->I == 0) ? " not" : "");
   fprintf(fp,"Solution time = %.3e\n",problem->cpu_time);
-  fprintf(fp,"Task data\n");
-#define TASK  problem->task[i]
-  for(i = 0;i < problem->T;i++)
-    fprintf(fp,"  %3d %3d %5d\n",TASK.starting_date,TASK.ending_date,TASK.profit);
+  fprintf(fp, "Task     Starting date     Ending date     Profit     Assigned to\n");
+#define TASK problem->task[i]
+  for (i = 0; i < 9; i++)
+  {
+    fprintf(fp, "%-d %15d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.assigned_to);
+  }
+  for (; i < problem->T ; i++)
+  {
+    fprintf(fp, "%-d %14d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.assigned_to);
+  }
 #undef TASK
   fprintf(fp,"End\n");
   //
