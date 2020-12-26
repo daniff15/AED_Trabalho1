@@ -326,7 +326,6 @@ void recursive_function(problem_t *problem, int num_tarefas)
       problem->task[num_tarefas].assigned_to = prog;
 
       recursive_function(problem, num_tarefas + 1);
-      //problem->busy[prog] = problem->task[i].ending_date;
 
       problem->total_profit = profit_tmp;
       problem->busy[prog] = busy_tmp;
@@ -360,6 +359,9 @@ static void solve(problem_t *problem)
   recursive_function(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
+  printf("%d\n",problem->num_viables);
+  printf("%d\n",problem->best_total_profit);
+  printf("%d\n",problem->num_solutions);
   //
   // save solution data
   //
