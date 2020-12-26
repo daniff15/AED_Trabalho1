@@ -360,9 +360,6 @@ static void solve(problem_t *problem)
   recursive_function(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
-  printf("%d\n",problem->num_viables);
-  printf("%d\n",problem->best_total_profit);
-  printf("%d\n",problem->num_solutions);
   //
   // save solution data
   //
@@ -373,23 +370,23 @@ static void solve(problem_t *problem)
   fprintf(fp,"Solution time = %.3e\n",problem->cpu_time);
   if (problem->I == 1)
   {
-    fprintf(fp, "Número maior de tasks possíveis de realizar = %d\n", problem->best_total_profit);
-    fprintf(fp, "Número de soluções = %d\n", problem->num_solutions);
+    fprintf(fp, "Possible tasks = %d\n", problem->best_total_profit);
+    fprintf(fp, "Soluctions = %d\n", problem->num_solutions);
   }
   else
   {
-    fprintf(fp, "Número dos conjuntos de tarefas viáveis = %d\n", problem->num_viables);
-    fprintf(fp, "Melhor lucro total = %d\n", problem->best_total_profit);
+    fprintf(fp, "Viable tasks = %d\n", problem->num_viables);
+    fprintf(fp, "Total Profit = %d\n", problem->best_total_profit);
   }
-  fprintf(fp, "Task     Starting date     Ending date     Profit     Assigned to\n");
+  fprintf(fp, "Task     Starting date     Ending date     Profit \n");
 #define TASK problem->task[i]
   for (i = 0; i < 9; i++)
   {
-    fprintf(fp, "%-d %15d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.assigned_to);
+    fprintf(fp, "%-d %15d %15d %14d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit);
   }
   for (; i < problem->T ; i++)
   {
-    fprintf(fp, "%-d %14d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.assigned_to);
+    fprintf(fp, "%-d %14d %15d %14d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit);
   }
 #undef TASK
   fprintf(fp,"End\n");
