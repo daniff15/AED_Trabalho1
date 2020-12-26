@@ -114,7 +114,7 @@ typedef struct
   char dir_name[16];      // I  directory name where the solution file will be created
   char file_name[64];     // I  file name where the solution data will be stored
   int best_total_profit;  //profit do melhor subconjunto de tarefas
-  int num_viables;        // número de trabalhos viáveis
+  unsigned long int num_viables;        // número de trabalhos viáveis
   int num_solutions;      // número de soluçoes
 }
 problem_t;
@@ -367,14 +367,14 @@ static void solve(problem_t *problem)
   fprintf(fp,"P = %d\n",problem->P);
   fprintf(fp,"Profits%s ignored\n",(problem->I == 0) ? " not" : "");
   fprintf(fp,"Solution time = %.3e\n",problem->cpu_time);
-  if (problem->I == 1)
+  if (problem->I != 0)
   {
     fprintf(fp, "Possible tasks = %d\n", problem->best_total_profit);
     fprintf(fp, "Soluctions = %d\n", problem->num_solutions);
   }
   else
   {
-    fprintf(fp, "Viable tasks = %d\n", problem->num_viables);
+    fprintf(fp, "Viable tasks = %ld\n", problem->num_viables);
     fprintf(fp, "Total Profit = %d\n", problem->best_total_profit);
   }
   fprintf(fp, "Task     Starting date     Ending date     Profit \n");

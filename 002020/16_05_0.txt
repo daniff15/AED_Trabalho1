@@ -1,0 +1,25 @@
+NMec = 2020
+T = 16
+P = 5
+Profits not ignored
+Solution time = 7.204e-04
+Viable tasks = 30310
+Total Profit = 19231
+Task     Starting date     Ending date     Profit 
+1               1               5            823
+2               1              14           2786
+3               2              13           2423
+4               2              19           1664
+5               3              15           1687
+6               3              24           2391
+7               5               7            556
+8               6              10            830
+9               6              24           2440
+10              6              24           2544
+11              8              18            997
+12              8              25           1452
+13             11              24           2981
+14             14              25           1524
+15             17              30           1936
+16             20              30           1697
+End
