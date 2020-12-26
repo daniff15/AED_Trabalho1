@@ -291,7 +291,7 @@ void recursive_function(problem_t *problem, int num_tarefas)
   if (num_tarefas == problem->T)
   {                                                         //Cálculo do profit
     problem->num_viables++;
-    if (problem->total_profit > problem->best_total_profit) //se o meu profit atual for maior que o melhor profit, ent o melhor fica com o valor do atual
+    if (problem->total_profit > problem->best_total_profit) 
     {
       problem->best_total_profit = problem->total_profit;
       problem->num_solutions = 1;
