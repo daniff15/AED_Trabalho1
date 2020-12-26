@@ -18,7 +18,7 @@ Dados T tasks, cada uma tendo uma data inicial, uma data final e um lucro, e dad
 
 ## Cadeira
 
-Este trabalho prático foi desenvolvido para a cadeira de Algoritmos e Estrutura de Dados, curso da [Universidade de Aveiro](https://www.ua.pt)
+Este trabalho prático foi desenvolvido para a cadeira de Algoritmos e Estrutura de Dados, curso de Engenharia Informática da [Universidade de Aveiro](https://www.ua.pt)
 
 ## Pré-Requisitos
 
