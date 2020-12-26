@@ -282,9 +282,9 @@ void recursive_function(problem_t *problem, int num_tarefas)
     problem->total_profit = 0;
     problem->best_total_profit = 0;
 
-    for (int j = 0; j < problem->P; j++)
+    for (prog = 0; prog < problem->P; prog++)
     {
-      problem->busy[j] = -1;
+      problem->busy[prog] = -1;
     }
   }
 
@@ -359,7 +359,7 @@ static void solve(problem_t *problem)
   recursive_function(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
-  
+
   // save solution data
   //
   fprintf(fp,"NMec = %d\n",problem->NMec);
