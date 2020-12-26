@@ -371,6 +371,16 @@ static void solve(problem_t *problem)
   fprintf(fp,"P = %d\n",problem->P);
   fprintf(fp,"Profits%s ignored\n",(problem->I == 0) ? " not" : "");
   fprintf(fp,"Solution time = %.3e\n",problem->cpu_time);
+  if (problem->I == 1)
+  {
+    fprintf(fp, "Número maior de tasks possíveis de realizar = %d\n", problem->best_total_profit);
+    fprintf(fp, "Número de soluções = %d\n", problem->num_solutions);
+  }
+  else
+  {
+    fprintf(fp, "Número dos conjuntos de tarefas viáveis = %d\n", problem->num_viables);
+    fprintf(fp, "Melhor lucro total = %d\n", problem->best_total_profit);
+  }
   fprintf(fp, "Task     Starting date     Ending date     Profit     Assigned to\n");
 #define TASK problem->task[i]
   for (i = 0; i < 9; i++)
