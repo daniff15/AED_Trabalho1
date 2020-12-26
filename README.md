@@ -28,6 +28,6 @@ O número de tasks deverá estar entre os valores 0 < num_tasks <= 64;
 O número de programadores deverá estar entre os valores 0 < num_programmers <= 10;
 
 ## Authors
-* **Daniel Figueiredo**: [daniff15]()
-* **Eva Bartolomeu**: [](https://github.com/bastos-01)
-* **Eduardo Fernandes**: [](https://github.com/bastos-01)
+* **Daniel Figueiredo**: [daniff15](https://github.com/daniff15)
+* **Eva Bartolomeu**: [eva-pomposo](https://github.com/eva-pomposo)
+* **Eduardo Fernandes**: []()
