@@ -1,5 +1,5 @@
 # AED_Trabalho1
-* wheigthed Job Selection, with more than one programmer.
+* Wheigthed Job Selection, with more than one programmer.
 
 Given T programming tasks, each one with a starting date, an ending date, and a profit, and given P programmers,
 the generalized weighted job selection problem asks for the best subset of programming tasks such that
