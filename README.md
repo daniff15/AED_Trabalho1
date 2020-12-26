@@ -33,4 +33,4 @@ Caso não se queira ignorar o lucro deveremos passar para esse argumento o valor
 ## Autores
 * **Daniel Figueiredo**: [daniff15](https://github.com/daniff15)
 * **Eva Bartolomeu**: [eva-pomposo](https://github.com/eva-pomposo)
-* **Eduardo Fernandes**: []()
+* **Eduardo Fernandes**: [rezeett](https://github.com/rezeett)
