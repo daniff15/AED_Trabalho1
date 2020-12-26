@@ -359,10 +359,7 @@ static void solve(problem_t *problem)
   recursive_function(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
-  printf("%d\n",problem->num_viables);
-  printf("%d\n",problem->best_total_profit);
-  printf("%d\n",problem->num_solutions);
-  //
+  
   // save solution data
   //
   fprintf(fp,"NMec = %d\n",problem->NMec);
