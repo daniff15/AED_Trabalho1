@@ -9,6 +9,7 @@ Dadas T tasks, cada uma tendo uma data inicial, uma data final e um lucro, e dad
 
 * Cada programador não pode fazer mais do que uma task ao mesmo tempo.
 
+Caso se queira ignorar o lucro, então o programa, vai gerar o número máximo de tasks que se podem realizar fornecendo também quantas possibilidades há para se gerar o número máximo de tasks.
 
 ## Cadeira
 
