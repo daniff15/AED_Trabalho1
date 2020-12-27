@@ -104,19 +104,19 @@ task_t;
 
 typedef struct
 {
-  int NMec;               // I  student number
-  int T;                  // I  number of tasks
-  int P;                  // I  number of programmers
-  int I;                  // I  if 1, ignore profits
-  int total_profit;       // S  current total profit
-  double cpu_time;        // S  time it took to find the solution
-  task_t task[MAX_T];     // IS task data
-  int busy[MAX_P];        // S  for each programmer, record until when she/he is busy (-1 means idle)
-  char dir_name[16];      // I  directory name where the solution file will be created
-  char file_name[64];     // I  file name where the solution data will be stored
-  int best_total_profit;  //profit do melhor subconjunto de tarefas
-  unsigned long int num_viables;        // número de trabalhos viáveis
-  int num_solutions;      // número de soluçoes
+  int NMec;                       // I  student number
+  int T;                          // I  number of tasks
+  int P;                          // I  number of programmers
+  int I;                          // I  if 1, ignore profits
+  int total_profit;               // S  current total profit
+  double cpu_time;                // S  time it took to find the solution
+  task_t task[MAX_T];             // IS task data
+  int busy[MAX_P];                // S  for each programmer, record until when she/he is busy (-1 means idle)
+  char dir_name[16];              // I  directory name where the solution file will be created
+  char file_name[64];             // I  file name where the solution data will be stored
+  unsigned long int num_viables;  // número de trabalhos viáveis
+  int num_solutions;              // número de soluçoes
+  int best_total_profit;          // total_profit da melhor solução 
 }
 problem_t;
 
@@ -283,14 +283,15 @@ void recursive_function(problem_t *problem, int num_tarefas)
     problem->total_profit = 0;
     problem->best_total_profit = 0;
 
-    for (prog = 0; prog < problem->P; prog++)
+    for (int j = 0; j < problem->P; j++)
     {
-      problem->busy[prog] = -1;
+      problem->busy[j] = -1;
     }
+    
   }
 
   if (num_tarefas == problem->T)
-  {                                                         //Cálculo do profit
+  {                                                         //Calculo do profit
     problem->num_viables++;
     if (problem->total_profit > problem->best_total_profit) 
     {
@@ -365,34 +366,28 @@ static void solve(problem_t *problem)
   recursive_function(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
-
+  //
   // save solution data
   //
-  fprintf(fp,"NMec = %d\n",problem->NMec);
-  fprintf(fp,"T = %d\n",problem->T);
-  fprintf(fp,"P = %d\n",problem->P);
-  fprintf(fp,"Profits%s ignored\n",(problem->I == 0) ? " not" : "");
-  fprintf(fp,"Solution time = %.3e\n",problem->cpu_time);
+  fprintf(fp, "NMec = %d\n", problem->NMec);
+  fprintf(fp, "T = %d\n", problem->T);
+  fprintf(fp, "P = %d\n", problem->P);
+  fprintf(fp, "Profits%s ignored\n", (problem->I == 0) ? " not" : "");
+  fprintf(fp, "Solution time = %.3e\n", problem->cpu_time);
   if (problem->I != 0)
   {
-    fprintf(fp, "Possible tasks = %d\n", problem->best_total_profit);
-    fprintf(fp, "Soluctions = %d\n", problem->num_solutions);
+    fprintf(fp, "Maximum possible tasks = %d\n", problem->best_total_profit);
+    fprintf(fp, "Solutions = %d\n", problem->num_solutions);
   }
   else
   {
-    fprintf(fp, "Viable tasks = %ld\n", problem->num_viables);
-    fprintf(fp, "Total Profit = %d\n", problem->best_total_profit);
+    fprintf(fp, "Viable job selections = %ld\n", problem->num_viables);
+    fprintf(fp, "Best total profit = %d\n", problem->best_total_profit);
   }
-  fprintf(fp, "Task     Starting date     Ending date     Profit \n");
-#define TASK problem->task[i]
-  for (i = 0; i < 9; i++)
-  {
-    fprintf(fp, "%-d %15d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit, TASK.best_assigned_to);
-  }
-  for (; i < problem->T ; i++)
-  {
-    fprintf(fp, "%-d %14d %15d %14d %10d\n", i+1 ,TASK.starting_date, TASK.ending_date, TASK.profit , TASK.best_assigned_to);
-  }
+  fprintf(fp, "Task data\n");
+#define TASK  problem->task[i]
+  for(i = 0;i < problem->T;i++)
+    fprintf(fp,"  %3d %3d %5d %5d\n",TASK.starting_date,TASK.ending_date,TASK.profit, TASK.best_assigned_to);
 #undef TASK
   fprintf(fp,"End\n");
   //
