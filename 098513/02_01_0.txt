@@ -1,0 +1,11 @@
+NMec = 98513
+T = 2
+P = 1
+Profits not ignored
+Solution time = 1.422e-06
+Viable job selections = 3
+Best total profit = 1422
+Task data
+   13  22  1422     0
+   14  27  1408    -1
+End
