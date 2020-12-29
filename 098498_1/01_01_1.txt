@@ -1,0 +1,10 @@
+NMec = 98498
+T = 1
+P = 1
+Profits ignored
+Solution time = 9.090e-07
+Maximum possible tasks = 1
+Solutions = 1
+Task data
+    1   5     1     0
+End
