@@ -2,9 +2,9 @@
 //
 // AED, 2020/2021
 //
-// TODO: place the student number and name here
-// TODO: place the student number and name here (if applicable)
-// TODO: place the student number and name here (if applicable)
+// Daniel Figueiredo, nº 98498
+// Eva Bartolomeu, nº 98513
+// Eduardo Fernandes, nº 98512
 //
 // Brute-force solution of the generalized weighted job selection problem
 //
