@@ -42,6 +42,9 @@ ylabel('Programadores');
 zlabel('Tempo (s)');
 legend('98513', '98498', '98512')
 
+%% ihbg
+
+
 %% Gráfico dos tempos de execução para I=1
 
 n = cellfun(@str2double, (cellfun(@(x) x(1:2),cell_98513{1,2},'UniformOutput',false)) ); %n = tasks de 98513
