@@ -2,9 +2,9 @@ clear all
 close all
 
 %Meter path onde se tem o ficheiro maxTasks guardado
-task98498 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098498\maxTasks.txt' , 'r');
-task98512 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098512\maxTasks.txt' , 'r');
-task98513 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098513\maxTasks.txt' , 'r');
+task98498 = load('098498\maxTasks.txt' , 'r');
+task98512 = load('098512\maxTasks.txt' , 'r');
+task98513 = load('098513\maxTasks.txt' , 'r');
 
 maxTask498 = task98498(:,3);
 figure(1)
