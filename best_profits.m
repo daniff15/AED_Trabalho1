@@ -2,9 +2,9 @@ clear all
 close all
 
 %Meter path onde se tem o ficheiro best_profit guardado
-prof98498 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098498\profits.txt' , 'r');
-prof98512 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098512\profits.txt' , 'r');
-prof98513 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098513\profits.txt' , 'r');
+prof98498 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098498\best_profits.txt' , 'r');
+prof98512 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098512\best_profits.txt' , 'r');
+prof98513 = load('C:\Users\HP OMEN\Documents\MATLAB\AED\098513\best_profits.txt' , 'r');
 
 figure(1)
 profit498 = prof98498(: , 3);
