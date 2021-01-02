@@ -1,0 +1,16 @@
+NMec = 98512
+T = 7
+P = 3
+Profits ignored
+Solution time = 3.162e-06
+Maximum possible tasks = 4
+Solutions = 19
+Task data
+    0  17     1    -1
+    0  17     1    -1
+    3  23     1    -1
+    9  16     1     0
+   11  29     1     1
+   14  25     1     2
+   22  25     1     0
+End
