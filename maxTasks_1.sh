@@ -1,5 +1,5 @@
 #! /bin/bash
-cd ./098512
+cd ./098498
 
 #Retirar de cada ficheiro o número máximo de tasks
 #sed serve para ir apenas aos ficheiros que terminam apenas em _1.txt, sendo estes aqueles que tem o número máximo de tasks
