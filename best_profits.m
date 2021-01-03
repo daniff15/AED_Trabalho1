@@ -30,8 +30,35 @@ title('Lucros para nº Mecanográfico - 98513');
 xlabel('Lucro');
 ylabel('Nº de Ocorrências');
 
-% Tabelas dos bests profits
+%% Código usado para guardar informação útil para a construção de tabelas dos bests profits em word
 
-tabela_98498 = table(prof98498(: , 1),prof98498(: , 2),prof98498(: , 3),'VariableNames',{'Tarefas','Programadores','Best profit'})
-tabela_98513 = table(prof98513(: , 1),prof98513(: , 2),prof98513(: , 3),'VariableNames',{'Tarefas','Programadores','Best profit'})
-tabela_98512 = table(prof98512(: , 1),prof98512(: , 2),prof98512(: , 3),'VariableNames',{'Tarefas','Programadores','Best profit'})
+tabela_98498 = cell(40,9);
+
+tabela_98498{1,1} = ' Tasks / Programadores ';  %cada linha representa as tasks
+                                                %cada coluna representa os programadores
+
+for linha = 2:40    %preenchimento da legenda de cada linha
+    tabela_98498{linha,1} = linha - 1;
+end
+
+for coluna = 2:9    %preenchimento da legenda de cada coluna
+    tabela_98498{1,coluna} = coluna - 1;
+end
+
+tabela_98513 = tabela_98498; %copiar os cabeçalhos
+tabela_98512 = tabela_98498; %copiar os cabeçalhos
+
+%Preencher cada elemento, com o valor de best profit das respetivas tasks e
+%programadores, de acordo com os cabeçalhos adicionados:
+
+for line = 1:284
+    tabela_98498{prof98498(line , 1) + 1,prof98498(line , 2) + 1} = prof98498(line , 3);
+end
+
+for line = 1:284
+    tabela_98513{prof98513(line , 1) + 1,prof98513(line , 2) + 1} = prof98513(line , 3);
+end
+
+for line = 1:284
+    tabela_98512{prof98512(line , 1) + 1 ,prof98512(line , 2) + 1} = prof98512(line , 3);
+end
