@@ -64,3 +64,17 @@ end
 for line = 1:284
     tabela_98512{prof98512(line , 1) + 1 ,prof98512(line , 2) + 1} = prof98512(line , 3);
 end
+
+%% Gráficos dos best profits
+
+figure
+plot3(prof98498(:,1),prof98498(:,2),profit498,'go-');
+hold on
+plot3(prof98513(:,1),prof98513(:,2),profit513,'r*-');
+plot3(prof98512(:,1),prof98512(:,2),profit512,'bs-');
+hold off
+title('Best profits')
+xlabel('Tarefas');
+ylabel('Programadores');
+zlabel('Best profit');
+legend('98498','98513', '98512')
