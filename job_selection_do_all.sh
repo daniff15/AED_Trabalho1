@@ -6,8 +6,8 @@ if [ -d $d ]; then
   d=$(printf "%06d" $NMec)
   rm -vf $(grep -L End $d/*)
 fi
-for T in {1..39}; do
-  for P in {1..8}; do
+for T in {39..39}; do
+  for P in {5..8}; do
     if (( $T >= $P )); then
       f=$(printf "%06d/%02d_%02d_%d.txt" $NMec $T $P $I)
       if [ ! -e $f ]; then
