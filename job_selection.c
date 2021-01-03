@@ -267,7 +267,7 @@ void init_problem(int NMec, int T, int P, int ignore_profit, problem_t *problem)
 // problem solution (place your solution here)
 //
 
-void recursive_function(problem_t *problem, int num_tarefas)
+void best_subset(problem_t *problem, int num_tarefas)
 {
 
   int prog;
@@ -293,7 +293,7 @@ void recursive_function(problem_t *problem, int num_tarefas)
   else
   {
     problem->task[num_tarefas].assigned_to = -1;
-    recursive_function(problem, num_tarefas + 1);
+    best_subset(problem, num_tarefas + 1);
 
     for (prog = 0; prog < problem->P; prog++)
     {
@@ -313,7 +313,7 @@ void recursive_function(problem_t *problem, int num_tarefas)
       problem->total_profit += problem->task[num_tarefas].profit;
       problem->task[num_tarefas].assigned_to = prog;
 
-      recursive_function(problem, num_tarefas + 1);
+      best_subset(problem, num_tarefas + 1);
 
       problem->total_profit = profit_tmp;
       problem->busy[prog] = busy_tmp;
@@ -351,7 +351,7 @@ static void solve(problem_t *problem)
   {
     problem->busy[j] = -1;
   }
-  recursive_function(problem, 0);
+  best_subset(problem, 0);
 
   problem->cpu_time = cpu_time() - problem->cpu_time;
   //
